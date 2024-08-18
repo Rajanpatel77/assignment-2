@@ -1,48 +1,45 @@
 #include <stdio.h>
 
-int main() {
+void main() {
     int choice;
     float base, height, length, width, radius, area;
 
     while (1) {
-        printf("1. Triangle\n");
-        printf("\nCalculate Area\n");
-        printf("2. Rectangle\n");
-        printf("3. Circle\n");
-        printf("4. Exit\n");
-        printf("Enter your choice: ");
+        printf("\n1. Triangle");
+        printf("\n2. Rectangle");
+        printf("\n3. Circle");
+        printf("\n4. Exit");
+        printf("\nEnter your choice: ");
         scanf("%d", &choice);
 
+        if (choice == 1) {
+            printf("Enter base of triangle: ");
+            scanf("%f", &base);
+            printf("Enter height of triangle: ");
+            scanf("%f", &height);
+            area = 0.5 * base * height;
+            printf("\nArea of triangle is: %.2f", area);
 
-        switch (choice) {
-            case 1:
-                printf("Enter the base of the triangle: ");
-                scanf("%f", &base);
-                printf("\nEnter the height of the triangle: ");
-                scanf("%f", &height);
-                area = 0.5 * base * height;
-                printf(\n"Area of the triangle is: %.2f", area);
-                break;
-            case 2:
-                printf("\nEnter the length of the rectangle: ");
-                scanf("%f", &length);
-                printf("\nEnter the width of the rectangle: ");
-                scanf("%f", &width);
-                area = length * width;
-                printf("\nArea of the rectangle is: %.2f", area);
-                break;
-            case 3:
-                printf("\nEnter the radius of the circle: ");
-                scanf("%f", &radius);
-                area = 3.14159 * radius * radius;
-                printf("\nArea of the circle is: %.2f", area);
-                break;
-            case 4:
-                printf("\nExiting the program.");
-                
-            default:
-                printf("\nInvalid choice. Please enter a valid option.");
+        } else if (choice == 2) {
+            printf("Enter length of rectangle: ");
+            scanf("%f", &length);
+            printf("Enter width of rectangle: ");
+            scanf("%f", &width);
+            area = length * width;
+            printf("\nArea of rectangle is: %.2f", area);
+
+        } else if (choice == 3) {
+            printf("Enter radius of circle: ");
+            scanf("%f", &radius);
+            area = 3.14159 * radius * radius;
+            printf("\nArea of circle is: %.2f", area);
+
+        } else if (choice == 4) {
+            printf("Good Byy.\n");
+            break;
+            
+        } else {
+            printf("\nInvalid choice option.");
         }
     }
-
 }
